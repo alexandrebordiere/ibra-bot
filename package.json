@@ -1,0 +1,44 @@
+{
+  "name": "ibra-bot",
+  "version": "1.0.0",
+  "description": "A Discord Bot centered around the IbraTV YouTube channel",
+  "main": "dist/app.js",
+  "author": "Alexandre Bordiere <al.bordiere@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "discord",
+    "bot",
+    "ibratv"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexandrebordiere/ibra-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandrebordiere/ibra-bot/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "rm -rf dist && tsc",
+    "lint": "eslint .",
+    "format": "npm run lint -- --fix",
+    "postinstall": "npm run build && if [ ! -f .env ]; then cp .env.example .env; fi"
+  },
+  "dependencies": {
+    "@types/ws": "^7.4.0",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "ffmpeg-static": "^3.0.0",
+    "node-opus": "^0.3.3",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.14.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
